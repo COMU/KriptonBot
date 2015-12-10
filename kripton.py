@@ -36,7 +36,7 @@ def echo(bot, update):
     # slap x => kicking @x from group.
     if "slap" in update.message.text:
         texts = ['Kicking @'+update.message.text.split(" ")[1]+' from group.']
-        bot.sendMessage(update.message.chat_id, text=texts[random.randint(0,1)])
+        bot.sendMessage(update.message.chat_id, text=texts[0])
     else:
         bot.sendMessage(update.message.chat_id, text=update.message.text)
 
