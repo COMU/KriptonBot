@@ -23,7 +23,7 @@ def start(bot, update):
     bot.sendMessage(update.message.chat_id, text='Please type /help for functions')
 
 def help(bot, update):
-    bot.sendMessage(update.message.chat_id, text='/turingtest, /gerrit')
+    bot.sendMessage(update.message.chat_id, text='/turingtest, /gerrit, /halay')
 
 def turingtest(bot, update):
     texts = ["srsly mate?", "cmon dude", "what? my name is ozcan, i'm a free inhabitant", "you talking to me?"]
@@ -31,6 +31,9 @@ def turingtest(bot, update):
 
 def gerrit(bot, update):
     bot.sendMessage(update.message.chat_id, text='Try https://gerrit.libreoffice.org/ and https://bugs.documentfoundation.org/')    
+
+def halay(bot, update):
+    bot.sendMessage(update.message.chat_id, text="\o/\\o/\\o/")
 
 def echo(bot, update):
     # slap x => kicking @x from group.
@@ -52,6 +55,7 @@ def main():
     dp.addTelegramCommandHandler("help", help)
     dp.addTelegramCommandHandler("gerrit", gerrit)
     dp.addTelegramCommandHandler("turingtest", turingtest)
+    dp.addTelegramCommandHandler("halay", halay)
 
     dp.addTelegramMessageHandler(echo)
 
