@@ -5,6 +5,7 @@ from telegram import Updater
 import sys
 import logging
 import random
+import urllib
 
 root = logging.getLogger()
 root.setLevel(logging.INFO)
@@ -43,6 +44,10 @@ def echo(bot, update):
     if "slap" in update.message.text:
         texts = ['Kicking @'+update.message.text.split(" ")[1]+' from group.']
         bot.sendMessage(update.message.chat_id, text=texts[0])
+    # google x => LMGTFY
+    elif "google" in update.message.text:
+    	search = "http://lmgtfy.com/?q=" + urllib.quote_plus(update.message.text.replace("google",""))
+	bot.sendMessage(update.message.chat_id, text=search)
     else:
         bot.sendMessage(update.message.chat_id, text=update.message.text)
 
