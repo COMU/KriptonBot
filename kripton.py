@@ -47,7 +47,7 @@ def echo(bot, update):
     # google x => LMGTFY
     elif "google" in update.message.text:
     	search = "http://lmgtfy.com/?q=" + urllib.quote_plus(update.message.text.replace("google",""))
-	    bot.sendMessage(update.message.chat_id, text=search)
+	bot.sendMessage(update.message.chat_id, text=search)
     else:
         bot.sendMessage(update.message.chat_id, text=update.message.text)
 
