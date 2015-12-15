@@ -33,6 +33,9 @@ def turingtest(bot, update):
 def gerrit(bot, update):
     bot.sendMessage(update.message.chat_id, text='Try https://gerrit.libreoffice.org/ and https://bugs.documentfoundation.org/')    
 
+def turku(bot, update):
+    bot.sendMessage(update.message.chat_id, text='Gunde 3 ogun Neset Ertas!!')
+
 def halay(bot, update):
     bot.sendMessage(update.message.chat_id, text="\o/\\o/\\o/")
 
@@ -65,7 +68,7 @@ def main():
     dp.addTelegramCommandHandler("turingtest", turingtest)
     dp.addTelegramCommandHandler("halay", halay)
     dp.addTelegramCommandHandler("icselhalay", icselhalay)
-    
+    dp.addTelegramCommandHandler("turku", turku)
     dp.addTelegramMessageHandler(echo)
 
     dp.addErrorHandler(error)
